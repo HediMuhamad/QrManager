@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="50dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="false"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/QrImage"
+        android:src="@drawable/qr_code_orange"
+        app:tint="@color/slate_blue" />
+
+
+    <RelativeLayout
+        android:id="@+id/desc"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_alignParentBottom="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp">
+
+        <TextView
+            android:id="@+id/from_qrcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:text="@string/from_the_qr_code"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:id="@+id/to_clipboard_btn"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/to_clipboard" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/qr_code_output"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/desc"
+        android:layout_centerInParent="true"
+        android:background="@color/slate_blue"
+        android:backgroundTint="@color/slate_blue"
+        android:maxHeight="200dp"
+        android:padding="10dp"
+        android:scrollbars="vertical"
+        android:textColor="@color/white"
+        tools:ignore="TextContrastCheck" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="15dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/github_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/github"
+            android:contentDescription="@string/github_desc" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/sulphur_point_bold"
+            android:text="@string/getSource" />
+
+    </LinearLayout>
+
+</RelativeLayout>
