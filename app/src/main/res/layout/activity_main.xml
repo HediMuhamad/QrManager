@@ -5,47 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="50dp"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:id="@+id/qrCodeImage"
+        android:layout_width="@dimen/content_width"
+        android:layout_height="@dimen/content_width"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="false"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/qr_code_orange"
+        android:src="@drawable/qr_code_image"
         app:tint="@color/slate_blue"
         android:contentDescription="@string/QrImage" />
 
     <Button
-        android:id="@+id/scanBtn"
+        android:id="@+id/scanIntentBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imageView"
+        android:layout_below="@id/qrCodeImage"
         android:layout_centerInParent="true"
         android:layout_marginTop="60dp"
-        android:width="300dp"
+        android:width="@dimen/content_width"
         android:height="30dp"
         android:background="@color/slate_blue"
         android:backgroundTint="@color/slate_blue"
-        android:onClick="onBtnsClicked"
+        android:fontFamily="@font/sulphur_point"
+        android:onClick="onBtnClicked"
         android:text="@string/scan_btn"
         android:textColor="@color/white"
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/generateBtn"
+        android:id="@+id/generateIntentBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/scanBtn"
+        android:layout_below="@id/scanIntentBtn"
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
-        android:width="300dp"
+        android:width="@dimen/content_width"
         android:height="30dp"
         android:background="@color/slate_blue"
-        android:onClick="onBtnsClicked"
+        android:fontFamily="@font/sulphur_point"
+        android:onClick="onBtnClicked"
         android:text="@string/generate_btn"
         android:textColor="@color/white"
         tools:ignore="TextContrastCheck" />
@@ -56,6 +59,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_marginBottom="15dp"
+        android:onClick="onBtnClicked"
+        android:id="@+id/getSourceBtn"
         android:orientation="vertical">
 
         <ImageView
@@ -71,7 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
-            android:fontFamily="@font/sulphur_point_bold"
+            android:fontFamily="@font/sulphur_point"
             android:text="@string/getSource" />
 
     </LinearLayout>

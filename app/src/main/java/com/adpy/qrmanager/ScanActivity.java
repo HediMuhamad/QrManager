@@ -10,13 +10,10 @@ import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.view.View;
 import android.webkit.URLUtil;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.ColorInt;
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,8 +22,8 @@ import com.google.zxing.integration.android.IntentResult;
 
 // implements onClickListener for the onclick behaviour of button
 public class ScanActivity extends AppCompatActivity implements View.OnClickListener {
-    TextView qrcodeOutput;
-    ImageView toClipboardBtn;
+    TextView outputTxtView;
+    ImageView helperCopyBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +35,10 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
         intentIntegrator.setOrientationLocked(true);
         intentIntegrator.initiateScan();
 
-        qrcodeOutput = findViewById(R.id.qr_code_output);
-        toClipboardBtn = findViewById(R.id.to_clipboard_btn);
+        outputTxtView = findViewById(R.id.outputTxtView);
+        helperCopyBtn = findViewById(R.id.helperCopyBtn);
 
-        toClipboardBtn.setOnClickListener(this);
+        helperCopyBtn.setOnClickListener(this);
     }
 
     @Override
@@ -54,13 +51,13 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
                 Intent startIntent = new Intent(this, MainActivity.class);
                 startActivity(startIntent);
             } else {
-                qrcodeOutput.setText(intentResult.getContents());
-                String text = String.valueOf(qrcodeOutput.getText());
+                outputTxtView.setText(intentResult.getContents());
+                String text = String.valueOf(outputTxtView.getText());
                 if(URLUtil.isNetworkUrl(text)){
                     SpannableString mSpannableString = new SpannableString(text);
                     mSpannableString.setSpan(new UnderlineSpan(), 0, mSpannableString.length(), 0);
-                    qrcodeOutput.setText(mSpannableString);
-                    qrcodeOutput.setOnClickListener(this);
+                    outputTxtView.setText(mSpannableString);
+                    outputTxtView.setOnClickListener(this);
                 }
             }
         } else {
@@ -72,15 +69,15 @@ public class ScanActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
 
         switch (view.getId()) {
-            case R.id.to_clipboard_btn:
+            case R.id.helperCopyBtn:
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData clip = ClipData.newPlainText("qrCode", String.valueOf(qrcodeOutput.getText()));
+                ClipData clip = ClipData.newPlainText("qrCode", String.valueOf(outputTxtView.getText()));
                 clipboard.setPrimaryClip(clip);
                 Toast.makeText(this, "Copied",  Toast.LENGTH_LONG).show();
                 break;
 
-            case R.id.qr_code_output:
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(qrcodeOutput.getText())));
+            case R.id.outputTxtView:
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(outputTxtView.getText())));
                 startActivity(browserIntent);
                 break;
         }

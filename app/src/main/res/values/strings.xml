@@ -2,8 +2,10 @@
     <string name="app_name">QrManager</string>
     <string name="scan_btn">Scan QR</string>
     <string name="generate_btn">Generate QR</string>
-    <string name="getSource">Get Source</string>
-    <string name="QrImage">QrCode Image</string>
     <string name="github_desc">Github Icon</string>
+    <string name="getSource">Get Source</string>
+    <string name="source_code_link">https://github.com/HediMuhamad/QrManager</string>
+    <string name="QrImage">QrCode Image</string>
     <string name="from_the_qr_code">From the Qr code</string>
+    <string name="write_something">Write Something...</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.adpy.qrmanager;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
@@ -14,14 +15,19 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
     }
 
-    public void onBtnsClicked(View view){
+    public void onBtnClicked(View view){
         switch (view.getId()){
-            case R.id.scanBtn:
+            case R.id.scanIntentBtn:
                 Intent scanIntent = new Intent(this, ScanActivity.class);
                 startActivity(scanIntent);
                 break;
-            case R.id.generateBtn:
-                Intent generateIntent = new Intent(this, ScanActivity.class);
+            case R.id.generateIntentBtn:
+                Intent generateIntent = new Intent(this, GeneratorActivity.class);
+                startActivity(generateIntent);
+                break;
+            case R.id.getSourceBtn:
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(getResources().getString(R.string.source_code_link))));
+                startActivity(browserIntent);
                 break;
         }
     }

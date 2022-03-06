@@ -5,60 +5,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="50dp"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:id="@+id/qrCodeImage"
+        android:layout_width="@dimen/content_width"
+        android:layout_height="@dimen/content_width"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="false"
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/QrImage"
-        android:src="@drawable/qr_code_orange"
+        android:src="@drawable/qr_code_image"
         app:tint="@color/slate_blue" />
 
 
     <RelativeLayout
-        android:id="@+id/desc"
-        android:layout_width="300dp"
+        android:id="@+id/helperBar"
+        android:layout_width="@dimen/content_width"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imageView"
+        android:layout_below="@id/qrCodeImage"
         android:layout_alignParentBottom="false"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp">
 
         <TextView
-            android:id="@+id/from_qrcode"
+            android:id="@+id/helperTxtView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginBottom="5dp"
+            android:fontFamily="@font/sulphur_point"
             android:text="@string/from_the_qr_code"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
         <ImageView
-            android:id="@+id/to_clipboard_btn"
+            android:id="@+id/helperCopyBtn"
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/to_clipboard" />
+            android:src="@drawable/copy_icon" />
 
     </RelativeLayout>
 
 
     <TextView
-        android:id="@+id/qr_code_output"
-        android:layout_width="300dp"
+        android:id="@+id/outputTxtView"
+        android:layout_width="@dimen/content_width"
         android:layout_height="wrap_content"
-        android:layout_below="@id/desc"
+        android:layout_below="@id/helperBar"
         android:layout_centerInParent="true"
         android:background="@color/slate_blue"
         android:backgroundTint="@color/slate_blue"
+        android:fontFamily="@font/sulphur_point"
         android:maxHeight="200dp"
         android:padding="10dp"
         android:scrollbars="vertical"
@@ -71,6 +74,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_marginBottom="15dp"
+        android:onClick="onBtnClicked"
+        android:id="@+id/getSourceBtn"
         android:orientation="vertical">
 
         <ImageView
@@ -86,7 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
-            android:fontFamily="@font/sulphur_point_bold"
+            android:fontFamily="@font/sulphur_point"
             android:text="@string/getSource" />
 
     </LinearLayout>
