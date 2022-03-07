@@ -1,7 +1,7 @@
 # QR-Manager
 ## About
 * This is a simple android app project to create and scan QR-Code.
-* This app built upon [ZXing-embedded](https://github.com/zxing/zxing) dependency, an API that make create and read Digital Codes easier.
+* This app built upon [ZXing-embedded](https://github.com/zxing/zxing) library, an API that make create and read Digital Codes easier.
 * Used font: Sulphur_point, get it from [Google Fonts](https://fonts.google.com/specimen/Sulphur+Point).
 
 <br>
