@@ -63,9 +63,11 @@ public class GeneratorActivity extends AppCompatActivity implements View.OnClick
             barcodeEncoder = new BarcodeEncoder();
             bitmap = barcodeEncoder.encodeBitmap(content,
                     BarcodeFormat.QR_CODE, size, size);
+
         } catch (WriterException e) {
             Log.e("generateQR()", e.getMessage());
-        }
+        };
+
         return bitmap;
     }
 
