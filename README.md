@@ -24,16 +24,16 @@
   </tr>
   <tr>
     <td>
-      <img src="https://github.com/HediMuhamad/Test/blob/208720143aac795a42cd5cb7551b665a5e56e03e/screenshots/main_page.jpg" width="220px" />
+      <img src="https://raw.githubusercontent.com/HediMuhamad/QrManager/master/screenshots/main_page.jpg" width="220px" />
     </td>
     <td>
-      <img src="https://github.com/HediMuhamad/Test/blob/208720143aac795a42cd5cb7551b665a5e56e03e/screenshots/after_scan.jpg" width="220px" />
+      <img src="https://raw.githubusercontent.com/HediMuhamad/QrManager/master/screenshots/after_scan.jpg" width="220px" />
     </td>
     <td>
-      <img src="https://github.com/HediMuhamad/Test/blob/208720143aac795a42cd5cb7551b665a5e56e03e/screenshots/before_generating.jpg" width="220px" />
+      <img src="https://raw.githubusercontent.com/HediMuhamad/QrManager/master/screenshots/before_generating.jpg" width="220px" />
     </td>
     <td>
-      <img src="https://github.com/HediMuhamad/Test/blob/208720143aac795a42cd5cb7551b665a5e56e03e/screenshots/after_generating.jpg" width="220px" />
+      <img src="https://raw.githubusercontent.com/HediMuhamad/QrManager/master/screenshots/after_generating.jpg" width="220px" />
     </td>
   </tr>
 </table>
